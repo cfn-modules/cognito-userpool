@@ -1,0 +1,9 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'cfn-modules test'
+Resources:
+  UserPool:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      InitialUser: 'noreply@widdix.de'
+      TemplateURL: './node_modules/@cfn-modules/cognito-userpool/module.yml'

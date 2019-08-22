@@ -1,0 +1,17 @@
+{
+  "name": "@cfn-modules/cognito-userpool",
+  "version": "0.0.11",
+  "description": "Cognito User Pool",
+  "author": "Andreas Wittig <andreas@widdix.de>",
+  "license": "Apache-2.0",
+  "bundledDependencies": ["@cfn-modules/lambda-function"],
+  "keywords": ["cfn-modules", "cfn-modules:ExposeArn", "cfn-modules:ExposeId"],
+  "homepage": "https://github.com/cfn-modules",
+  "bugs": {
+    "url": "https://github.com/cfn-modules/cognito-userpool/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/cfn-modules/cognito-userpool.git"
+  }
+}
