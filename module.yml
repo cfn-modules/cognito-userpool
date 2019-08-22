@@ -47,10 +47,10 @@ Resources:
   User:
     Condition: HasInitialUser
     Type: 'AWS::Cognito::UserPoolUser'
-    Properties: 
+    Properties:
       DesiredDeliveryMediums:
       - EMAIL
-      UserAttributes: 
+      UserAttributes:
       - Name: 'email'
         Value: !Ref InitialUser
       Username: !Ref InitialUser
