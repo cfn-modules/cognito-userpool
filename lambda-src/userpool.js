@@ -17,7 +17,7 @@ exports.handler = (event, context, cb) => {
       if (err) {
         error(err);
       } else {
-        console.log(`Deleted custom domain ${domain} for user pool ${event.ResourceProperties.UserPoolId}`);
+        console.log(`Deleted custom domain ${event.PhysicalResourceId} for user pool ${event.ResourceProperties.UserPoolId}`);
         response.send(event, context, response.SUCCESS, {}, event.PhysicalResourceId);
       }
     });

@@ -76,7 +76,7 @@ Resources:
         ManagedPolicyArns: !Ref DomainPolicy
       TemplateURL: './node_modules/@cfn-modules/lambda-function/module.yml'
   Domain:
-    Type: 'Custom::Dashboard'
+    Type: 'Custom::UserPoolDomain'
     Version: '1.0'
     Properties:
       UserPoolId: !Ref UserPool
