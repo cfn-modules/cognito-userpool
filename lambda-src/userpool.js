@@ -35,7 +35,7 @@ exports.handler = (event, context, cb) => {
       }
     });
   } else if (event.RequestType === 'Update') {
-    // Updating the domain name is not supported
+    console.log(`Updating the domain name ${event.PhysicalResourceId} for ${event.ResourceProperties.UserPoolId} is not supported.`);
     response.send(event, context, response.SUCCESS, {}, event.PhysicalResourceId);
   } else {
     error(new Error(`unsupported request type: ${event.RequestType}`));
