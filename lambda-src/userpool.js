@@ -22,16 +22,16 @@ exports.handler = (event, context, cb) => {
       }
     });
   } else if (event.RequestType === 'Create') {
-    const domain = crypto.randomBytes(5).toString('hex');
+    const randomDomain = event.RequestId;
     cognito.createUserPoolDomain({
-      Domain: domain,
+      Domain: randomDomain,
       UserPoolId: event.ResourceProperties.UserPoolId,
     }, function(err, data) {
       if (err) {
         error(err);
       } else {
-        console.log(`Created custom domain ${domain} for user pool ${event.ResourceProperties.UserPoolId}`);
-        response.send(event, context, response.SUCCESS, {}, domain);
+        console.log(`Created custom domain ${randomDomain} for user pool ${event.ResourceProperties.UserPoolId}`);
+        response.send(event, context, response.SUCCESS, {}, randomDomain);
       }
     });
   } else if (event.RequestType === 'Update') {

@@ -14,7 +14,7 @@
 # limitations under the License.
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules: Amaznon Cognito User Pool'
-# cfn-modules:implements(ExposeArn, ExposeId, LambdaDependency)
+# cfn-modules:implements(ExposeArn, ExposeId)
 Parameters:
   InitialUser:
     Description: 'Optional email address for initial user (temporary password via email).'
