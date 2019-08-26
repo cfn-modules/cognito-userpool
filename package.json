@@ -1,6 +1,6 @@
 {
   "name": "@cfn-modules/cognito-userpool",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cognito User Pool",
   "author": "Andreas Wittig <andreas@widdix.de>",
   "license": "Apache-2.0",
