@@ -75,17 +75,22 @@ Resources:
         Timeout: '30'
         ManagedPolicyArns: !Ref DomainPolicy
       TemplateURL: './node_modules/@cfn-modules/lambda-function/module.yml'
-  Domain:
+  Domain: # deprecated, will be removed with the next major version
     Type: 'Custom::UserPoolDomain'
     Version: '1.0'
     Properties:
       UserPoolId: !Ref UserPool
       ServiceToken: !GetAtt 'DomainFunction.Outputs.Arn'
+  UserPoolDomain:
+    Type: 'AWS::Cognito::UserPoolDomain'
+    Properties:
+      UserPoolId: !Ref UserPool
+      Domain: !Select [ 2, !Split [ '/', !Ref 'AWS::StackId' ] ]
 Outputs:
   ModuleId:
     Value: 'cognito-userpool'
   ModuleVersion:
-    Value: '1.1.0'
+    Value: '2.0.0'
   StackName:
     Value: !Ref 'AWS::StackName'
   Arn:
@@ -96,7 +101,11 @@ Outputs:
     Value: !Ref UserPool
     Export:
       Name: !Sub '${AWS::StackName}-Id'
-  Domain:
+  Domain: # deprecated, will be removed with the next major version
     Value: !Ref Domain
+    Export:
+      Name: !Sub '${AWS::StackName}-Domain'
+  UserPoolDomain:
+    Value: !Ref UserPoolDomain
     Export:
       Name: !Sub '${AWS::StackName}-Domain'
