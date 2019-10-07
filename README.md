@@ -60,6 +60,8 @@ Resources:
 
 ### Migrate to v2
 
-We are replacing a custom resource with the newly added `AWS::Cognito::UserPoolDomain`. Therefore, we need to change the randomly generated domain name. With v2 we will keep the old domain name for a smooth migration.
+We are replacing a custom resource with the newly added `AWS::Cognito::UserPoolDomain`. Therefore, we need to change the randomly generated domain name. 
 
-* Upgrade [ecs-alb-target](https://github.com/cfn-modules/ecs-alb-target) to version `1.3.0`.
+1. Temporary disable the `CognitoUserPoolModule` from all [ecs-alb-target](https://github.com/cfn-modules/ecs-alb-target) modules. Alternatively, you can also delete all stacks containing the `ecs-alb-target` module.
+1. Upgrade to version `2.0.0` of `cognito-userpool`.
+1. Enable the `CognitoUserPoolModule` from all [ecs-alb-target](https://github.com/cfn-modules/ecs-alb-target) modules.
