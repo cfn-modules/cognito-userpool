@@ -85,7 +85,7 @@ Resources:
     Type: 'AWS::Cognito::UserPoolDomain'
     Properties:
       UserPoolId: !Ref UserPool
-      Domain: !Select [ 2, !Split [ '/', !Ref 'AWS::StackId' ] ]
+      Domain: !Select [2, !Split ['/', !Ref 'AWS::StackId']]
 Outputs:
   ModuleId:
     Value: 'cognito-userpool'
