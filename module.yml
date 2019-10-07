@@ -108,4 +108,4 @@ Outputs:
   UserPoolDomain:
     Value: !Ref UserPoolDomain
     Export:
-      Name: !Sub '${AWS::StackName}-Domain'
+      Name: !Sub '${AWS::StackName}-UserPoolDomain'
