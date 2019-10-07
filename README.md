@@ -55,3 +55,13 @@ Resources:
 ## Limitations
 
 * Secure: Does not backup/snapshot the users stored in the user pool.
+
+## Migration Guides
+
+### Migrate to v2
+
+We are replacing a custom resource with the newly added `AWS::Cognito::UserPoolDomain`. Therefore, we need to change the randomly generated domain name. 
+
+1. Temporary disable the `CognitoUserPoolModule` from all [ecs-alb-target](https://github.com/cfn-modules/ecs-alb-target) modules. Alternatively, you can also delete all stacks containing the `ecs-alb-target` module.
+1. Upgrade to version `2.0.0` of `cognito-userpool`.
+1. Enable the `CognitoUserPoolModule` from all [ecs-alb-target](https://github.com/cfn-modules/ecs-alb-target) modules.

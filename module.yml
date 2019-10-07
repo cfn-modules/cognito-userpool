@@ -55,37 +55,16 @@ Resources:
         Value: !Ref InitialUser
       Username: !Ref InitialUser
       UserPoolId: !Ref UserPool
-  DomainPolicy:
-    Type: 'AWS::IAM::ManagedPolicy'
-    Properties:
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-        - Effect: Allow
-          Action:
-          - 'cognito-idp:CreateUserPoolDomain'
-          - 'cognito-idp:DeleteUserPoolDomain'
-          Resource: '*'
-  DomainFunction:
-    Type: 'AWS::CloudFormation::Stack'
-    Properties:
-      Parameters:
-        Handler: 'userpool.handler'
-        Runtime: 'nodejs8.10'
-        Timeout: '30'
-        ManagedPolicyArns: !Ref DomainPolicy
-      TemplateURL: './node_modules/@cfn-modules/lambda-function/module.yml'
-  Domain:
-    Type: 'Custom::UserPoolDomain'
-    Version: '1.0'
+  UserPoolDomain:
+    Type: 'AWS::Cognito::UserPoolDomain'
     Properties:
       UserPoolId: !Ref UserPool
-      ServiceToken: !GetAtt 'DomainFunction.Outputs.Arn'
+      Domain: !Select [2, !Split ['/', !Ref 'AWS::StackId']]
 Outputs:
   ModuleId:
     Value: 'cognito-userpool'
   ModuleVersion:
-    Value: '1.1.0'
+    Value: '2.0.0'
   StackName:
     Value: !Ref 'AWS::StackName'
   Arn:
@@ -97,6 +76,6 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}-Id'
   Domain:
-    Value: !Ref Domain
+    Value: !Ref UserPoolDomain
     Export:
       Name: !Sub '${AWS::StackName}-Domain'
