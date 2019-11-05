@@ -4,11 +4,7 @@
   "description": "Cognito User Pool",
   "author": "Andreas Wittig <andreas@widdix.de>",
   "license": "Apache-2.0",
-  "keywords": [
-    "cfn-modules",
-    "cfn-modules:ExposeArn",
-    "cfn-modules:ExposeId"
-  ],
+  "keywords": ["cfn-modules", "cfn-modules:ExposeArn", "cfn-modules:ExposeId"],
   "homepage": "https://github.com/cfn-modules",
   "bugs": {
     "url": "https://github.com/cfn-modules/cognito-userpool/issues"
