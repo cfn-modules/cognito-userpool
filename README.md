@@ -29,6 +29,14 @@ Resources:
       TemplateURL: './node_modules/@cfn-modules/cognito-userpool/module.yml'
 ```
 
+## Examples
+
+none
+
+## Related modules
+
+none
+
 ## Parameters
 
 <table>
