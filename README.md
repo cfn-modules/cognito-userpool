@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/cfn-modules/cognito-userpool.svg?branch=master)](https://travis-ci.org/cfn-modules/cognito-userpool)
-[![NPM version](https://img.shields.io/npm/v/@cfn-modules/cognito-userpool.svg)](https://www.npmjs.com/package/@cfn-modules/cognito-userpool)
-
 # cfn-modules: Amazon Cognito User Pool
 
 An Amazon Cognito User Pool with domain and client.
