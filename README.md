@@ -22,7 +22,7 @@ Resources:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       Parameters:
-        InitialUser: 'hello@widdix.de' # optional
+        InitialUser: 'your@mail.com' # optional
       TemplateURL: './node_modules/@cfn-modules/cognito-userpool/module.yml'
 ```
 
